@@ -2,6 +2,10 @@
 csi2532 playground
 Firas Jribi 300084463
 
+## lab005
+
+Les migrations ont ete ajoutees a db/migrations
+
 ## lab004
 
 ### Une base de données universitaire
