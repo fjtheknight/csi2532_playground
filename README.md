@@ -2,6 +2,79 @@
 csi2532 playground
 Firas Jribi 300084463
 
+
+## lab006
+
+1) 
+```sql
+SELECT name, dateofbirth FROM artists;
+```
+
+![R #1](assets/6/1.png)
+
+2) 
+```sql
+SELECT title, price FROM artworks WHERE year > 1600;
+```
+
+![R #2](assets/6/2.png)
+
+3) 
+```sql
+SELECT title, type FROM artworks WHERE year = 2000 OR artist_name = 'Picasso';
+```
+
+![R #3](assets/6/3.png)
+
+4) 
+```sql
+SELECT name, birthplace FROM artists 
+WHERE EXTRACT(YEAR FROM dateofbirth) > 1880 
+and EXTRACT(YEAR FROM dateofbirth) < 1930 ;
+```
+
+![R #4](assets/6/4.png)
+
+5) 
+```sql
+SELECT name, country FROM artists 
+WHERE style in ('Modern', 'Baroque', 'Renaissance');
+```
+
+![R #5](assets/6/5.png)
+
+6) 
+```sql
+SELECT * FROM artworks ORDER BY title;
+```
+
+![R #6](assets/6/6.png)
+
+7) 
+```sql
+SELECT name, id
+FROM customers
+JOIN likeartists ON customers.ID = likeartists.customer_id
+where artist_name = 'Picasso';
+```
+
+![R #7](assets/6/7.png)
+
+8) 
+```sql
+SELECT name
+FROM customers
+JOIN likeartists ON customers.ID = likeartists.customer_id
+WHERE artist_name in (
+  SELECT name 
+  FROM artists JOIN artworks on artists.name = artworks.artist_name
+  WHERE style = 'Renaissance' AND price > 30000
+);
+```
+
+![R #8](assets/6/8.png)
+
+
 ## lab005
 
 Les migrations ont ete ajoutees a db/migrations
