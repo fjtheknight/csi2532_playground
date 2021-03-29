@@ -3,6 +3,36 @@ csi2532 playground
 Firas Jribi 300084463
 
 
+## lab008
+
+creer table de clients
+```sql
+CREATE TABLE clients (
+  name text,
+  token text DEFAULT md5(random()::text),
+  data jsonb,
+  PRIMARY KEY(name)
+);
+```
+
+seed de clients
+```sql
+INSERT INTO clients(name, token) 
+	VALUES 
+		('Big Co.', 'd7d85f7eac7360d725b44d327445473e'), 
+		('Small Co.', '9f8983a8494c8a003e064374ffb77cb6');
+```
+
+
+test api avec curl
+
+![lab8 #1](assets/8/1.png)
+
+
+test localhost
+
+![lab8 #2](assets/8/2.png)
+
 ## lab006
 
 1) 
